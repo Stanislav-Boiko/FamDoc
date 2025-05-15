@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced JS</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/3d-fluency/94/hospital.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    
+    <!-- Шапка -->
+    <div class="container mt-5">
+        <nav class="navbar navbar-light bg-light fixed-top shadow">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img
+                    src="https://img.icons8.com/3d-fluency/94/hospital.png"
+                    alt="logo"
+                    width="48"
+                    height="48"
+                    class="me-2"
+                    />
+                    <span class="fw-bold">FamDoc</span>
+                </a>
+                
+                <button class="btn btn-danger" 
+                    id="loginButton" 
+                    type="submit" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#loginModal">
+                    Registration / Login
+                </button>
+            </div>
+        </nav>
+
+    </div>
+
+    <div class="container mt-5">
+        
+
+        <div class="row">
+            <div class="container text-center w-50 mt-5 mb-4" id="board">
+                <div id="noItemsMessage" class="alert alert-danger fw-bold" role="alert">
+                    No items have been added.
+                </div>
+            </div>
+        
+            
+            <!-- Фильтр карточек -->
+            <div class="row mb-5" id="visitFilterContainer" style="display:none;">
+                <form class="w-50 mx-auto">
+                    <fieldset>
+                        <legend>VISIT FILTERING</legend>
+                        <div class="mb-3">
+                            <label for="disabledTextInput" class="form-label">Search by title / content of the visit</label>
+                            <input type="text" id="disabledTextInput" class="form-control" placeholder="Title / Content">
+                        </div>
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select id="status" class="form-select">
+                                <option value="Open">Open</option>
+                                <option value="Done">Done</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="urgency" class="form-label">Urgency of the visit</label>
+                            <select id="urgency" class="form-select">
+                                <option value="Low">Low</option>
+                                <option value="Normal">Normal</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+                        
+                        <button id="submit-filter" type="submit" class="btn btn-success">Show Visits</button>
+                        <button id="show-all" type="submit" class="btn btn-outline-success">Show All</button>
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="row mt-4 animation-cards" id="cardsContainer">
+            
+        </div>
+
+
+        <div class="row">
+
+            <!-- Модальное окно АВТОРИЗАЦИИ-->
+            <div class="modal fade" 
+            id="loginModal" 
+            tabindex="-1" 
+            aria-labelledby="loginModalLabel" 
+            aria-hidden="true">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Authorization</h5>
+                        <button type="button" 
+                            class="btn-close" 
+                            data-bs-dismiss="modal" 
+                            aria-label="Закрыть">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Registration / Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="visitModalContainer">
+            
+        </div>
+        
+    </div>    
+
+    
+    <script src="./Bootstrap/bootstrap.min.js"></script>
+    <script type="module" src="./JS/main.js"></script>
+</body>
+</html>
