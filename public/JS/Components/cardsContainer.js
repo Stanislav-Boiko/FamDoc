@@ -1,0 +1,1 @@
+export const cardsContainer = document.getElementById('cardsContainer');

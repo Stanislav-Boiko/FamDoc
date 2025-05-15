@@ -1,6 +1,6 @@
 
 
-import { VisitCard } from '../Classes/VisitCard.js';
+import { VisitCard } from '../Classes/visitCard.js';
 
 
 

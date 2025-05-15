@@ -1,6 +1,6 @@
-
 import { updateCard, deleteCard } from '../Services/apiService.js';
 import { VisitModal } from './VisitModal.js';
+import { checkBoardState } from '../Components/BoardState.js'; // Додати цей імпорт
 
 
 
@@ -40,7 +40,7 @@ export class VisitCard {
                 <p><strong>Description:</strong> ${this.cardData.description}</p>
                 <p><strong>Urgency:</strong> ${this.cardData.urgency}</p>
                 <p class="card-status"><strong>Status</strong>: <span class="status-text">${this.cardData.status || 'Open'}</span></p>
-                ${this.renderDoctorSpecificFields()}
+                ${this.renderSpecificFields()}
             </div>
         `;
 
@@ -149,19 +149,8 @@ export class VisitCard {
     }
     
 
-    renderDoctorSpecificFields() {
-        if (this.cardData.doctor === 'Cardiologist') {
-            return `
-                <p><strong>Pressure:</strong> ${this.cardData.bp}</p>
-                <p><strong>Body mass index:</strong> ${this.cardData.bmi}</p>
-                <p><strong>Heart disease:</strong> ${this.cardData.heartDiseases}</p>
-                <p><strong>Вік:</strong> ${this.cardData.age}</p>
-            `;
-        } else if (this.cardData.doctor === 'Dentist') {
-            return `<p><strong>Last visit:</strong> ${this.cardData.lastVisit}</p>`;
-        } else if (this.cardData.doctor === 'Therapist') {
-            return `<p><strong>Age:</strong> ${this.cardData.age}</p>`;
-        }
+    renderSpecificFields() {
+        // дефолтна реалізація для базового класу
         return '';
     }
 
