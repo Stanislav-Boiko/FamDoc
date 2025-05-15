@@ -22,7 +22,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
 
     // Відправка запиту на отримання токена
-    fetch("https://ajax.test-danit.com/api/v2/cards/login", {
+    fetch("http://localhost:3001/api/v2/cards/login", {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
@@ -74,6 +74,20 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert(error.message);
     });
 
+});
+
+// Додаємо автозавантаження карток при наявності токена
+document.addEventListener('DOMContentLoaded', () => {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+        fetchCards(token)
+            .then(cards => {
+                cards.forEach(cardData => addCardToBoard(cardData));
+            })
+            .catch(error => {
+                console.error('Не вдалося завантажити картки:', error);
+            });
+    }
 });
 
 
