@@ -1,4 +1,40 @@
 .sortable-ghost {
-    opacity: 0.6;
-    border: 2px dashed #198754;
+  opacity: 0.6;
+  border: 2px dashed #198754;
+}
+
+/* Адаптивність для карток */
+@media (max-width: 991.98px) {
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
   }
+  .card {
+    font-size: 0.95rem;
+    touch-action: none;
+    pointer-events: none;
+  }
+  .card-header,
+  .card-footer {
+    padding: 0.5rem 1rem;
+  }
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* Додатково для дуже малих екранів */
+@media (max-width: 575.98px) {
+  .card {
+    font-size: 0.9rem;
+  }
+  .btn {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .navbar-brand span {
+    font-size: 1.1rem;
+  }
+}
