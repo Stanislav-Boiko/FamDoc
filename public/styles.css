@@ -1,7 +1,7 @@
-.sortable-ghost {
+/* .sortable-ghost {
   opacity: 0.6;
   border: 2px dashed #198754;
-}
+} */
 
 /* Адаптивність для карток */
 @media (max-width: 991.98px) {
@@ -13,7 +13,6 @@
   .card {
     font-size: 0.95rem;
     touch-action: none;
-    pointer-events: none;
   }
   .card-header,
   .card-footer {

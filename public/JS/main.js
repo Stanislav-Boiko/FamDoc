@@ -6,7 +6,7 @@ import { VisitModal } from './Classes/VisitModal.js';
 
 import { addCardToBoard } from './Components/FnAddCards.js';
 
-import './Components/Sortable.js';
+// import './Components/Sortable.js';
 import './Components/BoardState.js'
 import './Components/ShowCards.js'
 import './Components/Buttons/Submit.js'
