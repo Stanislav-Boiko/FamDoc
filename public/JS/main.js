@@ -22,7 +22,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
 
     // Відправка запиту на отримання токена
-    fetch("http://localhost:3001/api/v2/cards/login", {
+    fetch("https://famdoc-server-1.onrender.com/api/v2/cards/login", {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'

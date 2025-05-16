@@ -1,5 +1,5 @@
 // const API_URL = 'https://ajax.test-danit.com/api/v2/cards';
-const API_URL = 'http://localhost:3001/api/v2/cards';
+const API_URL = 'https://famdoc-server-1.onrender.com/api/v2/cards';
 
 export async function fetchCards(token) {
     const response = await fetch(API_URL, {
